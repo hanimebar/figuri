@@ -47,7 +47,7 @@ export default function HomePage() {
               <Button asChild size="xl" className="bg-white text-emerald-800 hover:bg-emerald-50 shadow-lg shadow-black/20">
                 <Link href="/signup">Start free trial <ArrowRight className="h-5 w-5 ml-1" /></Link>
               </Button>
-              <Button asChild size="xl" variant="outline" className="border-white/40 text-white hover:bg-white/10">
+              <Button asChild size="xl" variant="outline" className="border-white/40 text-white hover:bg-white/10 bg-transparent">
                 <Link href="/example">See an example →</Link>
               </Button>
             </div>

@@ -10,6 +10,7 @@ import { ArrowLeft, Plus, FileText, Send, Globe, Mail, Calendar, Edit } from 'lu
 import { formatPeriod } from '@/lib/utils'
 import { LANGUAGE_NAMES } from '@/types'
 import type { Client, MonthlyFigures, Narrative, Language } from '@/types'
+import { FinancialChart } from '@/components/dashboard/financial-chart'
 
 interface Props { params: Promise<{ id: string }> }
 
@@ -61,6 +62,11 @@ export default async function ClientDetailPage({ params }: Props) {
         <Button variant="ghost" size="sm" asChild className="-ml-1">
           <Link href="/dashboard/clients"><ArrowLeft className="h-4 w-4 mr-1" /> All clients</Link>
         </Button>
+
+        {/* Chart — only when there are figures */}
+        {figures.length >= 2 && (
+          <FinancialChart figures={figures} />
+        )}
 
         <div className="grid gap-6 lg:grid-cols-3">
           {/* Client info */}
