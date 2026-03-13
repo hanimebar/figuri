@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Äctvli Responsible Consulting' }],
   creator: 'Äctvli Responsible Consulting',
   metadataBase: new URL('https://figuri.actvli.com'),
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/brand/favicon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
@@ -24,11 +32,13 @@ export const metadata: Metadata = {
     title: 'Figuri — Monthly Financial Narratives for Accountants',
     description: 'Plain-English monthly financial narratives for small-practice accountants. In their client\'s language.',
     siteName: 'Figuri',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Figuri — Monthly Financial Narratives for Accountants' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Figuri — Monthly Financial Narratives for Accountants',
     description: 'Plain-English monthly financial narratives. Multilingual. Dispatched in one click.',
+    images: ['/brand/og-image.png'],
   },
 }
 

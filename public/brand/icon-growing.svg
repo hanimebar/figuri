@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#065f46"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="accentLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="200" height="200" rx="40" fill="url(#bg)"/>
+
+  <!-- Three practitioners (team of 3) -->
+  <!-- Left person -->
+  <circle cx="58" cy="88" r="16" fill="#6ee7b7" opacity="0.7"/>
+  <path d="M36 140 Q36 120 58 120 Q80 120 80 140 L80 152 Q80 158 74 158 L42 158 Q36 158 36 152 Z" fill="#6ee7b7" opacity="0.7"/>
+
+  <!-- Right person -->
+  <circle cx="142" cy="88" r="16" fill="#6ee7b7" opacity="0.7"/>
+  <path d="M120 140 Q120 120 142 120 Q164 120 164 140 L164 152 Q164 158 158 158 L126 158 Q120 158 120 152 Z" fill="#6ee7b7" opacity="0.7"/>
+
+  <!-- Centre person (lead) — larger, more prominent -->
+  <circle cx="100" cy="72" r="22" fill="url(#accentLight)"/>
+  <path d="M65 138 Q65 110 100 110 Q135 110 135 138 L135 155 Q135 163 126 163 L74 163 Q65 163 65 155 Z" fill="url(#accent)"/>
+
+  <!-- Document with chart on centre person -->
+  <rect x="76" y="148" width="48" height="32" rx="5" fill="white" opacity="0.95"/>
+  <rect x="83" y="155" width="28" height="2.5" rx="1.25" fill="#059669" opacity="0.5"/>
+  <rect x="83" y="161" width="20" height="2.5" rx="1.25" fill="#059669" opacity="0.5"/>
+  <polyline points="83,171 91,167 99,169 108,163" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- "GROWING" badge -->
+  <rect x="38" y="14" width="124" height="28" rx="14" fill="url(#accent)"/>
+  <text x="100" y="32" text-anchor="middle" font-family="-apple-system,'Segoe UI',sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1">GROWING</text>
+
+  <!-- Upward arrow accent (growth) -->
+  <circle cx="158" cy="60" r="16" fill="white" opacity="0.08"/>
+  <path d="M158 52 L152 62 L156 62 L156 68 L160 68 L160 62 L164 62 Z" fill="#f59e0b" opacity="0.9"/>
+
+  <!-- Star/sparkle top right -->
+  <circle cx="36" cy="46" r="3" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="28" cy="60" r="2" fill="#6ee7b7" opacity="0.4"/>
+  <circle cx="170" cy="46" r="2" fill="#6ee7b7" opacity="0.4"/>
+</svg>

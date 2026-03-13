@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon mark -->
+  <rect width="80" height="80" rx="18" fill="url(#bg)"/>
+  <rect x="21" y="18" width="30" height="38" rx="4" fill="white" opacity="0.12"/>
+  <rect x="21" y="18" width="30" height="38" rx="4" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <rect x="27" y="26" width="18" height="2.5" rx="1.25" fill="white" opacity="0.6"/>
+  <rect x="27" y="31.5" width="14" height="2.5" rx="1.25" fill="white" opacity="0.6"/>
+  <rect x="27" y="37" width="16" height="2.5" rx="1.25" fill="white" opacity="0.6"/>
+  <polyline points="29,50 35,44 41,47 49,36" stroke="url(#spark)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="29" cy="50" r="2" fill="#6ee7b7"/>
+  <circle cx="35" cy="44" r="2" fill="#6ee7b7"/>
+  <circle cx="41" cy="47" r="2" fill="#6ee7b7"/>
+  <circle cx="49" cy="36" r="2.5" fill="#34d399"/>
+  <circle cx="57" cy="23" r="5" fill="#f59e0b" opacity="0.9"/>
+  <line x1="57" y1="19" x2="57" y2="27" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="53" y1="23" x2="61" y2="23" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="54.5" y1="20.5" x2="59.5" y2="25.5" stroke="white" stroke-width="1" stroke-linecap="round"/>
+  <line x1="59.5" y1="20.5" x2="54.5" y2="25.5" stroke="white" stroke-width="1" stroke-linecap="round"/>
+  <!-- Wordmark: Figuri -->
+  <text x="98" y="51" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#0f172a" letter-spacing="-1">Figuri</text>
+  <!-- Tagline -->
+  <text x="99" y="67" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" letter-spacing="0.5">Financial narratives, in their language</text>
+</svg>

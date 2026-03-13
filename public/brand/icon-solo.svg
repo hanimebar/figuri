@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="trend" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="url(#bg)"/>
+
+  <!-- Single practitioner silhouette -->
+  <!-- Head -->
+  <circle cx="100" cy="62" r="22" fill="url(#accent)"/>
+  <!-- Body -->
+  <path d="M62 130 Q62 105 100 105 Q138 105 138 130 L138 148 Q138 155 130 155 L70 155 Q62 155 62 148 Z" fill="url(#accent)"/>
+
+  <!-- Document in hands -->
+  <rect x="72" y="138" width="56" height="42" rx="6" fill="white" opacity="0.95"/>
+  <!-- Document lines -->
+  <rect x="80" y="147" width="32" height="3" rx="1.5" fill="#059669" opacity="0.5"/>
+  <rect x="80" y="154" width="24" height="3" rx="1.5" fill="#059669" opacity="0.5"/>
+  <rect x="80" y="161" width="28" height="3" rx="1.5" fill="#059669" opacity="0.5"/>
+  <!-- Mini trend on doc -->
+  <polyline points="80,171 88,167 96,169 108,163" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- "Solo" label badge -->
+  <rect x="58" y="16" width="84" height="28" rx="14" fill="#059669"/>
+  <text x="100" y="34" text-anchor="middle" font-family="-apple-system,'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="1">SOLO</text>
+
+  <!-- Zap/speed accent -->
+  <circle cx="158" cy="80" r="18" fill="#f59e0b" opacity="0.15"/>
+  <path d="M162 70 L154 82 L160 82 L156 92 L165 78 L159 78 Z" fill="#f59e0b"/>
+</svg>
