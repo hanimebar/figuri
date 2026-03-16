@@ -29,13 +29,10 @@ export default function PricingPage() {
               </div>
               <div>
                 <div className="flex items-end gap-1">
-                  <span className="text-4xl font-bold">£{PLANS.solo.monthlyGBP}</span>
+                  <span className="text-4xl font-bold">€{PLANS.solo.monthlyEUR}</span>
                   <span className="text-muted-foreground pb-1">/month</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  or £{PLANS.solo.annualGBP}/year — save £{(PLANS.solo.monthlyGBP * 12) - PLANS.solo.annualGBP}
-                </p>
-                <p className="text-xs text-muted-foreground">
                   or €{PLANS.solo.annualEUR}/year — save €{(PLANS.solo.monthlyEUR * 12) - PLANS.solo.annualEUR}
                 </p>
               </div>
@@ -67,13 +64,10 @@ export default function PricingPage() {
               </div>
               <div>
                 <div className="flex items-end gap-1">
-                  <span className="text-4xl font-bold">£{PLANS.growing.monthlyGBP}</span>
+                  <span className="text-4xl font-bold">€{PLANS.growing.monthlyEUR}</span>
                   <span className="text-muted-foreground pb-1">/month</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  or £{PLANS.growing.annualGBP}/year — save £{(PLANS.growing.monthlyGBP * 12) - PLANS.growing.annualGBP}
-                </p>
-                <p className="text-xs text-muted-foreground">
                   or €{PLANS.growing.annualEUR}/year — save €{(PLANS.growing.monthlyEUR * 12) - PLANS.growing.annualEUR}
                 </p>
               </div>
