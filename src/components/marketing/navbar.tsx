@@ -29,14 +29,20 @@ export function Navbar() {
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden p-1" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden p-1"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+        >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-border bg-background px-4 py-4 space-y-2 md:hidden">
+        <div id="mobile-menu" className="border-t border-border bg-background px-4 py-4 space-y-2 md:hidden">
           {[
             { href: '/#features', label: 'Features' },
             { href: '/pricing', label: 'Pricing' },
