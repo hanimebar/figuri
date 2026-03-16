@@ -35,7 +35,9 @@ export default function PricingPage() {
                 <p className="text-sm text-muted-foreground mt-1">
                   or £{PLANS.solo.annualGBP}/year — save £{(PLANS.solo.monthlyGBP * 12) - PLANS.solo.annualGBP}
                 </p>
-                <p className="text-xs text-muted-foreground">€{PLANS.solo.monthlyEUR}/mo · €{PLANS.solo.annualEUR}/yr</p>
+                <p className="text-xs text-muted-foreground">
+                  or €{PLANS.solo.annualEUR}/year — save €{(PLANS.solo.monthlyEUR * 12) - PLANS.solo.annualEUR}
+                </p>
               </div>
             </CardHeader>
             <CardContent className="space-y-5">
@@ -71,7 +73,9 @@ export default function PricingPage() {
                 <p className="text-sm text-muted-foreground mt-1">
                   or £{PLANS.growing.annualGBP}/year — save £{(PLANS.growing.monthlyGBP * 12) - PLANS.growing.annualGBP}
                 </p>
-                <p className="text-xs text-muted-foreground">€{PLANS.growing.monthlyEUR}/mo · €{PLANS.growing.annualEUR}/yr</p>
+                <p className="text-xs text-muted-foreground">
+                  or €{PLANS.growing.annualEUR}/year — save €{(PLANS.growing.monthlyEUR * 12) - PLANS.growing.annualEUR}
+                </p>
               </div>
             </CardHeader>
             <CardContent className="space-y-5">

@@ -23,8 +23,8 @@ export const PLANS = {
     name: 'Solo Practice',
     monthlyGBP: 19,
     annualGBP: 149,
-    monthlyEUR: 22,
-    annualEUR: 175,
+    monthlyEUR: 19,
+    annualEUR: 179,
     clientLimit: 30,
     seats: 1,
     features: [
@@ -40,8 +40,8 @@ export const PLANS = {
     name: 'Growing Practice',
     monthlyGBP: 39,
     annualGBP: 299,
-    monthlyEUR: 45,
-    annualEUR: 349,
+    monthlyEUR: 39,
+    annualEUR: 379,
     clientLimit: null,
     seats: 3,
     features: [
