@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
 
 function buildNoncedCSP(nonce: string) {
@@ -27,8 +27,7 @@ export async function proxy(request: NextRequest) {
     response = NextResponse.next({ request: { headers: requestHeaders } })
   } else {
     try {
-      const modifiedRequest = new NextRequest(request.url, { headers: requestHeaders, method: request.method })
-      response = await updateSession(modifiedRequest)
+      response = await updateSession(request, { 'x-nonce': nonce })
     } catch {
       response = NextResponse.next({ request: { headers: requestHeaders } })
     }
