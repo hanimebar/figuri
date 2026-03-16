@@ -94,19 +94,19 @@ export default function NewClientPage() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Client / Business Name *</Label>
-                  <Input id="name" placeholder="e.g. Rose&apos;s Florist" {...register('name')} />
-                  {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
+                  <Input id="name" aria-required="true" placeholder="e.g. Rose's Florist" {...register('name')} />
+                  {errors.name && <p className="text-xs text-destructive" role="alert">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Client Email *</Label>
-                  <Input id="email" type="email" placeholder="owner@example.com" {...register('email')} />
+                  <Input id="email" type="email" autoComplete="email" aria-required="true" placeholder="owner@example.com" {...register('email')} />
                   {errors.email && <p className="text-xs text-destructive">{errors.email.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="business_type">Business Type *</Label>
-                <Input id="business_type" placeholder="e.g. retail florist, sole trader plumber, café" {...register('business_type')} />
+                <Input id="business_type" aria-required="true" placeholder="e.g. retail florist, sole trader plumber, café" {...register('business_type')} />
                 <p className="text-xs text-muted-foreground">This helps Claude write more relevant narratives.</p>
                 {errors.business_type && <p className="text-xs text-destructive">{errors.business_type.message}</p>}
               </div>
@@ -114,7 +114,7 @@ export default function NewClientPage() {
               <div className="space-y-2">
                 <Label htmlFor="language">Report Language *</Label>
                 <Select value={language} onValueChange={v => setValue('language', v)}>
-                  <SelectTrigger>
+                  <SelectTrigger id="language" aria-required="true">
                     <SelectValue placeholder="Select language" />
                   </SelectTrigger>
                   <SelectContent>

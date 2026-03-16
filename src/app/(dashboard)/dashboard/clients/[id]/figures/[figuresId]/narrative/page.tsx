@@ -222,7 +222,11 @@ export default function NarrativeGeneratorPage() {
                   </CardTitle>
                   <div className="flex items-center gap-2">
                     {bodyText && (
-                      <span className={`text-xs font-medium ${wordCountColor}`}>
+                      <span
+                        className={`text-xs font-medium ${wordCountColor}`}
+                        aria-live="polite"
+                        aria-atomic="true"
+                      >
                         {wordCount} words
                         {wordCount >= 200 && wordCount <= 260 ? ' ✓' : ' (target: 200–260)'}
                       </span>
@@ -240,8 +244,8 @@ export default function NarrativeGeneratorPage() {
                     <p className="text-sm text-muted-foreground mb-4 max-w-xs">
                       Claude Haiku will write a 200–260 word narrative in {client.language === 'en' ? 'English' : client.language} based on these figures.
                     </p>
-                    <Button onClick={generate}>
-                      <Sparkles className="h-4 w-4 mr-1" /> Generate Narrative
+                    <Button onClick={generate} aria-busy={generating}>
+                      <Sparkles className="h-4 w-4 mr-1" aria-hidden="true" /> Generate Narrative
                     </Button>
                   </div>
                 ) : generating ? (
@@ -259,10 +263,14 @@ export default function NarrativeGeneratorPage() {
                   </div>
                 ) : (
                   <Textarea
+                    id="narrative-body"
+                    aria-label={sent ? 'Sent narrative (read only)' : 'Edit narrative'}
+                    aria-required="true"
                     value={bodyText}
                     onChange={e => setBodyText(e.target.value)}
                     className="narrative-editor min-h-[280px] font-serif text-base leading-relaxed"
                     readOnly={sent}
+                    aria-readonly={sent}
                     placeholder="Generated narrative will appear here..."
                   />
                 )}
@@ -276,24 +284,27 @@ export default function NarrativeGeneratorPage() {
                           variant="outline"
                           onClick={generate}
                           disabled={generating}
+                          aria-busy={generating}
                         >
-                          <RefreshCw className="h-3.5 w-3.5 mr-1" /> Regenerate
+                          <RefreshCw className="h-3.5 w-3.5 mr-1" aria-hidden="true" /> Regenerate
                         </Button>
                         <Button
                           size="sm"
                           variant="outline"
                           onClick={saveDraft}
                           disabled={saving}
+                          aria-busy={saving}
                         >
-                          <Save className="h-3.5 w-3.5 mr-1" />
+                          <Save className="h-3.5 w-3.5 mr-1" aria-hidden="true" />
                           {saving ? 'Saving...' : 'Save Draft'}
                         </Button>
                         <Button
                           size="sm"
                           onClick={send}
                           disabled={sending || wordCount < 100}
+                          aria-busy={sending}
                         >
-                          <Send className="h-3.5 w-3.5 mr-1" />
+                          <Send className="h-3.5 w-3.5 mr-1" aria-hidden="true" />
                           {sending ? 'Sending...' : `Send to ${client.email}`}
                         </Button>
                       </>

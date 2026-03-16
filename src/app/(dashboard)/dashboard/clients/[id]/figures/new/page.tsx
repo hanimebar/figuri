@@ -115,7 +115,7 @@ export default function NewFiguresPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="revenue">Revenue *</Label>
-                  <Input id="revenue" type="number" step="0.01" placeholder="0.00" {...register('revenue')} />
+                  <Input id="revenue" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" {...register('revenue')} />
                   {errors.revenue && <p className="text-xs text-destructive">{errors.revenue.message}</p>}
                 </div>
                 <div className="space-y-2">
@@ -123,15 +123,15 @@ export default function NewFiguresPage() {
                     Cost of Goods Sold
                     <span className="ml-1 text-xs font-normal text-muted-foreground">(leave blank for service businesses)</span>
                   </Label>
-                  <Input id="cost_of_goods" type="number" step="0.01" placeholder="Leave blank if N/A" {...register('cost_of_goods')} />
+                  <Input id="cost_of_goods" type="number" step="0.01" inputMode="decimal" placeholder="Leave blank if N/A" {...register('cost_of_goods')} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="gross_margin_pct">Gross Margin %</Label>
-                  <Input id="gross_margin_pct" type="number" step="0.1" min="0" max="100" placeholder="e.g. 65.5" {...register('gross_margin_pct')} />
+                  <Input id="gross_margin_pct" type="number" step="0.1" min="0" max="100" inputMode="decimal" placeholder="e.g. 65.5" {...register('gross_margin_pct')} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="operating_expenses">Operating Expenses *</Label>
-                  <Input id="operating_expenses" type="number" step="0.01" placeholder="0.00" {...register('operating_expenses')} />
+                  <Input id="operating_expenses" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" {...register('operating_expenses')} />
                   {errors.operating_expenses && <p className="text-xs text-destructive">{errors.operating_expenses.message}</p>}
                 </div>
               </div>
@@ -142,12 +142,12 @@ export default function NewFiguresPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="net_profit">Net Profit *</Label>
-                  <Input id="net_profit" type="number" step="0.01" placeholder="0.00 (can be negative)" {...register('net_profit')} />
+                  <Input id="net_profit" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00 (can be negative)" {...register('net_profit')} />
                   {errors.net_profit && <p className="text-xs text-destructive">{errors.net_profit.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="cash_position">Cash in Bank (month end) *</Label>
-                  <Input id="cash_position" type="number" step="0.01" placeholder="0.00" {...register('cash_position')} />
+                  <Input id="cash_position" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" {...register('cash_position')} />
                   {errors.cash_position && <p className="text-xs text-destructive">{errors.cash_position.message}</p>}
                 </div>
               </div>

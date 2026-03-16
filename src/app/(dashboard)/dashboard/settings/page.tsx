@@ -158,7 +158,7 @@ export default function SettingsPage() {
             {accountant?.logo_url && (
               <div className="mb-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={accountant.logo_url} alt="Logo" className="h-12 object-contain" />
+                <img src={accountant.logo_url} alt={`${accountant.business_name} logo`} className="h-12 object-contain" />
               </div>
             )}
             <div className="flex items-center gap-3">
