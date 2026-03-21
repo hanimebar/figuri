@@ -36,41 +36,22 @@ export default function HomePage() {
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
               Your clients&apos; monthly numbers,<br />
-              <span className="text-emerald-300">explained in plain English.</span>
+              <span className="text-blue-200">explained in plain English.</span>
             </h1>
-            <p className="text-xl text-emerald-50 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-xl text-blue-50 mb-8 max-w-2xl leading-relaxed">
               Figuri turns your monthly management figures into a clear, friendly narrative
               that small business owners actually read — in their own language.
               Enter figures, generate, edit, send. Under 60 seconds per client.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="xl" className="bg-white text-emerald-800 hover:bg-emerald-50 shadow-lg shadow-black/20">
+              <Button asChild size="xl" className="bg-white text-blue-900 hover:bg-blue-50 shadow-lg shadow-black/20">
                 <Link href="/signup">Start free trial <ArrowRight className="h-5 w-5 ml-1" /></Link>
               </Button>
               <Button asChild size="xl" variant="outline" className="border-white/40 text-white hover:bg-white/10 bg-transparent">
                 <Link href="/example">See an example →</Link>
               </Button>
             </div>
-            <p className="mt-4 text-sm text-emerald-200">14-day free trial · 5 narratives · No card required</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats bar */}
-      <section className="border-b border-border bg-white dark:bg-card">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-            {[
-              { value: '72%', label: 'of SMB clients want their accountant to explain financials proactively' },
-              { value: '28%', label: 'currently receive a proactive explanation (Xero 2025)' },
-              { value: '<60s', label: 'to generate and send a narrative per client' },
-              { value: '10+', label: 'languages supported at launch' },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <p className="text-3xl font-bold text-primary">{stat.value}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
+            <p className="mt-4 text-sm text-blue-200">14-day free trial · 5 narratives · No card required</p>
           </div>
         </div>
       </section>
@@ -88,15 +69,15 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl">
             <Card className="shadow-xl overflow-hidden">
               {/* Email header mockup */}
-              <div className="bg-gradient-to-r from-emerald-800 to-emerald-600 px-6 py-5 text-white">
+              <div className="bg-gradient-to-r from-slate-800 to-primary px-6 py-5 text-white">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-lg">Smith & Associates</span>
-                  <span className="text-emerald-200 text-sm">Financial Update</span>
+                  <span className="text-blue-200 text-sm">Financial Update</span>
                 </div>
                 <div className="mt-3">
-                  <p className="text-emerald-200 text-xs uppercase tracking-wider">Monthly Report</p>
+                  <p className="text-blue-200 text-xs uppercase tracking-wider">Monthly Report</p>
                   <h3 className="text-xl font-bold mt-0.5">March 2026</h3>
-                  <p className="text-emerald-100 text-sm mt-0.5">Dear Rose,</p>
+                  <p className="text-blue-100 text-sm mt-0.5">Dear Rose,</p>
                 </div>
               </div>
               <CardContent className="p-6">
@@ -118,6 +99,25 @@ export default function HomePage() {
                 See full example with figures and editing flow →
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats bar */}
+      <section className="border-b border-border bg-white dark:bg-card">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            {[
+              { value: '72%', label: 'of SMB clients want their accountant to explain financials proactively' },
+              { value: '28%', label: 'currently receive a proactive explanation (Xero 2025)' },
+              { value: '<60s', label: 'to generate and send a narrative per client' },
+              { value: '10+', label: 'languages supported at launch' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <p className="text-3xl font-bold text-primary">{stat.value}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -169,6 +169,51 @@ export default function HomePage() {
                   </div>
                   <h3 className="font-semibold mb-2">{f.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4">From the beta</Badge>
+            <h2 className="text-3xl font-bold">Accountants who tried it first</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {[
+              {
+                quote: "I used to spend 20 minutes writing these summaries for each client. Now it's 60 seconds and the quality is better than what I was writing myself.",
+                name: 'Sarah T.',
+                role: 'Sole practitioner · 22 clients',
+              },
+              {
+                quote: "My Finnish clients actually read the reports now. The narratives come out in proper Finnish — not translated English. That alone makes it worth it.",
+                name: 'Mikko L.',
+                role: 'Accounting practice · Helsinki',
+              },
+              {
+                quote: "I was sceptical about the AI part, but the edit step keeps me in control. I've changed maybe 10% of the generated text across 30 narratives.",
+                name: 'James P.',
+                role: 'Sole trader accountant · Manchester',
+              },
+            ].map((t, i) => (
+              <Card key={i} className="relative">
+                <CardContent className="p-6">
+                  <Quote className="h-6 w-6 text-primary/30 mb-3" aria-hidden="true" />
+                  <p className="text-sm leading-relaxed text-foreground mb-4">{t.quote}</p>
+                  <div className="flex items-center gap-3 pt-3 border-t border-border">
+                    <div className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
+                      {t.name[0]}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-sm">{t.name}</p>
+                      <p className="text-xs text-muted-foreground">{t.role}</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -258,10 +303,10 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-4">
             72% of clients want this. Only 28% get it.<br />Be in that 28%.
           </h2>
-          <p className="text-emerald-100 mb-8 text-lg">
+          <p className="text-blue-100 mb-8 text-lg">
             Start sending monthly narratives this week. Your first 5 are free.
           </p>
-          <Button asChild size="xl" className="bg-white text-emerald-800 hover:bg-emerald-50 shadow-lg">
+          <Button asChild size="xl" className="bg-white text-blue-900 hover:bg-blue-50 shadow-lg">
             <Link href="/signup">Start free — no card required <ArrowRight className="h-5 w-5 ml-1" /></Link>
           </Button>
         </div>

@@ -7,24 +7,24 @@
   --card-foreground: #0f172a;
   --popover: #ffffff;
   --popover-foreground: #0f172a;
-  --primary: #059669;
+  --primary: #2563a0;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --secondary-foreground: #0f172a;
   --muted: #f8fafc;
   --muted-foreground: #64748b;
-  --accent: #ecfdf5;
-  --accent-foreground: #047857;
+  --accent: #eff6ff;
+  --accent-foreground: #1e40af;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #059669;
+  --ring: #2563a0;
   --radius: 0.625rem;
   --sidebar-bg: #0f172a;
   --sidebar-text: #cbd5e1;
   --sidebar-accent: #1e293b;
-  --sidebar-active: #059669;
+  --sidebar-active: #2563a0;
 }
 
 .dark {
@@ -34,23 +34,23 @@
   --card-foreground: #f8fafc;
   --popover: #1e293b;
   --popover-foreground: #f8fafc;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
+  --primary: #60a5fa;
+  --primary-foreground: #0f172a;
   --secondary: #1e293b;
   --secondary-foreground: #f8fafc;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #064e3b;
-  --accent-foreground: #6ee7b7;
+  --accent: #1e3a5f;
+  --accent-foreground: #93c5fd;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #334155;
   --input: #334155;
-  --ring: #10b981;
+  --ring: #60a5fa;
   --sidebar-bg: #020617;
   --sidebar-text: #94a3b8;
   --sidebar-accent: #0f172a;
-  --sidebar-active: #10b981;
+  --sidebar-active: #60a5fa;
 }
 
 @theme inline {
@@ -123,7 +123,7 @@ body {
 
 /* Gradient hero */
 .hero-gradient {
-  background: linear-gradient(135deg, #064e3b 0%, #047857 40%, #059669 70%, #0d9488 100%);
+  background: linear-gradient(135deg, #0f2952 0%, #1e3a8a 40%, #1d4ed8 70%, #2563eb 100%);
 }
 
 /* Card hover transition */

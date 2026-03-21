@@ -59,7 +59,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 px-4 py-12">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 px-4 py-12">
       <div className="mb-6 flex items-center gap-2">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
           <Sparkles className="h-5 w-5 text-white" />

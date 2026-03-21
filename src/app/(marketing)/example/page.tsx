@@ -130,15 +130,15 @@ export default function ExamplePage() {
           <CardContent>
             {/* Email mockup */}
             <div className="rounded-xl overflow-hidden border border-border shadow-sm">
-              <div className="bg-gradient-to-r from-emerald-800 to-emerald-600 px-6 py-4 text-white">
+              <div className="bg-gradient-to-r from-slate-800 to-primary px-6 py-4 text-white">
                 <div className="flex items-center justify-between">
                   <span className="font-bold">Smith & Associates</span>
-                  <span className="text-emerald-200 text-sm">Financial Update</span>
+                  <span className="text-blue-200 text-sm">Financial Update</span>
                 </div>
                 <div className="mt-2">
-                  <p className="text-emerald-200 text-xs uppercase tracking-wider">Monthly Report</p>
+                  <p className="text-blue-200 text-xs uppercase tracking-wider">Monthly Report</p>
                   <h3 className="text-lg font-bold">March 2026</h3>
-                  <p className="text-emerald-100 text-sm">Dear Rose,</p>
+                  <p className="text-blue-100 text-sm">Dear Rose,</p>
                 </div>
               </div>
               <div className="p-6 bg-white dark:bg-card">

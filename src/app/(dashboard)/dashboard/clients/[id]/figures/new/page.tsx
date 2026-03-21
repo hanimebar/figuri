@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -37,11 +37,28 @@ function currentMonth() {
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
 }
 
+function currencySymbolFor(code: string): string {
+  const map: Record<string, string> = { GBP: '£', EUR: '€', USD: '$', SEK: 'kr', NOK: 'kr', DKK: 'kr', CHF: 'Fr' }
+  return map[code] ?? code
+}
+
 export default function NewFiguresPage() {
   const router = useRouter()
   const { id } = useParams() as { id: string }
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [currencySymbol, setCurrencySymbol] = useState('£')
+
+  useEffect(() => {
+    const loadCurrency = async () => {
+      const supabase = createClient()
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+      const { data } = await supabase.from('accountants').select('currency').eq('id', user.id).single()
+      if (data?.currency) setCurrencySymbol(currencySymbolFor(data.currency))
+    }
+    loadCurrency()
+  }, [])
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -115,7 +132,10 @@ export default function NewFiguresPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="revenue">Revenue *</Label>
-                  <Input id="revenue" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" {...register('revenue')} />
+                  <div className="relative">
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm select-none">{currencySymbol}</span>
+                    <Input id="revenue" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" className="pl-7" {...register('revenue')} />
+                  </div>
                   {errors.revenue && <p className="text-xs text-destructive">{errors.revenue.message}</p>}
                 </div>
                 <div className="space-y-2">
@@ -123,7 +143,10 @@ export default function NewFiguresPage() {
                     Cost of Goods Sold
                     <span className="ml-1 text-xs font-normal text-muted-foreground">(leave blank for service businesses)</span>
                   </Label>
-                  <Input id="cost_of_goods" type="number" step="0.01" inputMode="decimal" placeholder="Leave blank if N/A" {...register('cost_of_goods')} />
+                  <div className="relative">
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm select-none">{currencySymbol}</span>
+                    <Input id="cost_of_goods" type="number" step="0.01" inputMode="decimal" placeholder="Leave blank if N/A" className="pl-7" {...register('cost_of_goods')} />
+                  </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="gross_margin_pct">Gross Margin %</Label>
@@ -131,7 +154,10 @@ export default function NewFiguresPage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="operating_expenses">Operating Expenses *</Label>
-                  <Input id="operating_expenses" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" {...register('operating_expenses')} />
+                  <div className="relative">
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm select-none">{currencySymbol}</span>
+                    <Input id="operating_expenses" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" className="pl-7" {...register('operating_expenses')} />
+                  </div>
                   {errors.operating_expenses && <p className="text-xs text-destructive">{errors.operating_expenses.message}</p>}
                 </div>
               </div>
@@ -142,12 +168,18 @@ export default function NewFiguresPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="net_profit">Net Profit *</Label>
-                  <Input id="net_profit" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00 (can be negative)" {...register('net_profit')} />
+                  <div className="relative">
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm select-none">{currencySymbol}</span>
+                    <Input id="net_profit" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00 (can be negative)" className="pl-7" {...register('net_profit')} />
+                  </div>
                   {errors.net_profit && <p className="text-xs text-destructive">{errors.net_profit.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="cash_position">Cash in Bank (month end) *</Label>
-                  <Input id="cash_position" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" {...register('cash_position')} />
+                  <div className="relative">
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm select-none">{currencySymbol}</span>
+                    <Input id="cash_position" type="number" step="0.01" inputMode="decimal" aria-required="true" placeholder="0.00" className="pl-7" {...register('cash_position')} />
+                  </div>
                   {errors.cash_position && <p className="text-xs text-destructive">{errors.cash_position.message}</p>}
                 </div>
               </div>
@@ -180,7 +212,7 @@ export default function NewFiguresPage() {
 
               <div className="flex gap-3 pt-2">
                 <Button type="submit" disabled={loading}>
-                  {loading ? 'Saving...' : 'Save & Generate Narrative →'}
+                  {loading ? 'Saving...' : 'Continue to Narrative →'}
                 </Button>
                 <Button type="button" variant="outline" asChild>
                   <Link href={`/dashboard/clients/${id}`}>Cancel</Link>
